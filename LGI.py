@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import ttk
 import sqlite3
+import random
 
 janela1 = Tk()
 
@@ -29,7 +30,7 @@ class Aplication():
                            relheight= 0.96)
     
     def botoes_telaPrincipal(self):
-        self.bt_criarConta = Button(self.frame_1, text= "Criar Conta")
+        self.bt_criarConta = Button(self.frame_1, text= "Criar Conta", command= self.abrir_tela_criarConta)
         self.bt_criarConta.place(relx= 0.01, rely= 0.12, relwidth= 0.2, relheight= 0.1)
 
         self.bt_acessarConta = Button(self.frame_1, text= "Acessar Conta")
@@ -37,6 +38,47 @@ class Aplication():
 
         self.lb_Titulo = Label(self.frame_1, text= "LCInvestimentos", font=('arial', 20 )) 
         self.lb_Titulo.place(relx= 0.01, rely= 0.01, relwidth= 0.97, relheight= 0.1)
+    
+    def abrir_tela_criarConta(self):
+        self.janelaCriar_Conta = Toplevel(self.janela1)
+        self.janelaCriar_Conta.title("Criar Conta")
+        self.janelaCriar_Conta.geometry("700x500")
+        self.janelaCriar_Conta.resizable(True, True)
+        self.janelaCriar_Conta.maxsize(width= 900, height= 800)
+        self.janelaCriar_Conta.minsize(width = 500, height = 400)
+        self.janelaCriar_Conta.configure(background= 'gray12')
+
+        self.lb_nome = Label(self.janelaCriar_Conta, text= "Nome", bg= 'white', fg= 'black')
+        self.lb_nome.place(relx=0.01, rely=0.01,relwidth= 0.1, relheight= 0.05)
+        self.entrey_nome = Entry(self.janelaCriar_Conta)
+        self.entrey_nome.place(relx= 0.01, rely= 0.07, relwidth= 0.2, relheight= 0.05)
+
+        self.lb_senha = Label(self.janelaCriar_Conta, text= "Senha", bg= 'white', fg= 'black')
+        self.lb_senha.place(relx=0.01, rely=0.13,relwidth= 0.1, relheight= 0.05)
+        self.entrey_senha = Entry(self.janelaCriar_Conta, show= "*")
+        self.entrey_senha.place(relx= 0.01, rely= 0.19, relwidth= 0.2, relheight= 0.05)
+
+        self.bt_numeroConta = Button(self.janelaCriar_Conta, text= " Número da Conta", command= self.numeroConta)
+        self.bt_numeroConta.place(relx=0.01, rely=0.26,relwidth= 0.2, relheight= 0.05)
+
+        self.entrey_numeroConta = Entry(self.janelaCriar_Conta, )
+        self.entrey_numeroConta.place(relx= 0.01, rely= 0.33, relwidth= 0.2, relheight= 0.05)
+
+        self.bt_salvar = Button(self.janelaCriar_Conta, text= "Salvar")
+        self.bt_salvar.place(relx= 0.01, rely= 0.4, relwidth= 0.1, relheight= 0.1)
+
+    def numeroConta(self):
+        conta = random.randint(1000, 9999)
+        self.entrey_numeroConta.delete(0, END)
+        self.entrey_numeroConta.insert(0, conta)
+        
+
+
+
+
+
+
+
 
     
 
