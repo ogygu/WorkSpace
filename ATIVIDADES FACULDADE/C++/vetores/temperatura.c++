@@ -2,7 +2,7 @@
 using namespace std;
 
 int main(){
-    float vetTemp[4];
+    float vetTemp[12];
     int i;
     float tempMaior = 0;
     float tempMenor = 0;
@@ -37,7 +37,7 @@ int main(){
         
 
     }
-    media = soma/5;
+    media = soma/13;
 
     cout<<"A maior temperatura eh:"<<tempMaior<<" eh do mes de: "<<maiorMes <<endl;
     cout<<"A menor temperatura eh: "<<tempMenor<<" eh do mes de: "<<menorMes <<endl;
