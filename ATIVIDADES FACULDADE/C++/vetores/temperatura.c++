@@ -8,31 +8,31 @@ int main(){
     float tempMenor = 0;
     float soma = 0;
     float media;
-    string mes;
+    string mes[12];
     string menorMes = " ";
     string maiorMes= " ";
 
-    for(i = 0; i<= 4; i++){
+    for(i = 0; i<= 12; i++){
         cout<<"Digite o valor da "<<i<<" temperatura : ";
         cin>>vetTemp[i];
         cout<<"Em qual mes: ";
-        cin>>mes;
+        cin>>mes[i];
         cout<<"--------------------------------------------"<<endl;
     }
     
 
-    for(i =0; i<= 4; i++){
+    for(i =0; i<= 12; i++){
         if(vetTemp[i]>1){
             tempMaior = vetTemp[i];
-            maiorMes = mes;
+            maiorMes = mes[i];
         }
         if(vetTemp[i]<1 || vetTemp[i]== 0){
             tempMenor = vetTemp[i];
-            menorMes = mes;
+            menorMes = mes[i];
         }
     }
 
-    for(i =0; i<= 4; i++){
+    for(i =0; i<= 12; i++){
         soma = soma + vetTemp[i];
         
 
