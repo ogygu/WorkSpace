@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "ostream": "cpp",
+        "iostream": "cpp",
+        "imprimir_matriz": "cpp"
+    }, 
+    "C_Cpp.default.compilerPath": "C:/MinGW/bin/g++.exe"
+}
